@@ -1,0 +1,19 @@
+server:
+  port: 8080   #??????????8080
+spring:
+  #???????
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/sakila?useSSL=false&serverTimezone=CST&allowMultiQueries=true
+    username: root
+    password: Asdfghjkl123
+
+#mybatis?????
+mybatis:
+  #mapper????
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.marong.springdemoproject.Model
+
+  #??????
+  configuration:
+    map-underscore-to-camel-case: true
