@@ -10,5 +10,5 @@ public interface ActorService {
 
     List<Actor> getActorList();
 
-   // Actor getActor(int uid);  //通过uid取得用户名称
+    Actor getActor(int uid);  //通过uid取得用户名称
 }

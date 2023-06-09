@@ -2,7 +2,6 @@ package com.marong.springdemoproject.controller;
 
 import com.marong.springdemoproject.Model.Actor;
 import com.marong.springdemoproject.Service.ActorServiceImpl;
-import com.marong.springdemoproject.Service.getBeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +13,8 @@ import java.util.List;
 @Controller
 public class ActorController {
 
-    private ActorServiceImpl actorService = getBeanUtils.getBean(ActorServiceImpl.class);
+    @Autowired
+    private ActorServiceImpl actorService;
 
     @RequestMapping("/hello")
     @ResponseBody
@@ -29,10 +29,10 @@ public class ActorController {
         return actorList;
     }
 
-//    @RequestMapping("/actor/{id}")
-//    @ResponseBody
-//    public Actor getActor(@PathVariable(name = "id") int id) {
-//        Actor actor = actorService.getActor(id);
-//        return actor;
-//    }
+    @RequestMapping("/actor/{id}")
+    @ResponseBody
+    public Actor getActor(@PathVariable(name = "id") int id) {
+        Actor actor = actorService.getActor(id);
+        return actor;
+    }
 }
